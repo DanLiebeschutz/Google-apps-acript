@@ -4,3 +4,10 @@ MailApp.sendEmail({
       subject:subject,
       htmlBody: msg2});
     }
+
+var msg2= askerFirstName +" "+askerLastName+ " wants to meet " + introFirstName + " " + introLastName + "<br><br><a href='mailto:" 
+    + askerEmail +"?subject="+subjectApprove+"&body=" + bodyApprove + "'>yes to asker</a> | <a href='mailto:" 
+    + introEmail +"?subject="+subjectPremmision+"&body=" + bodyPremmision + "'> Send intro request with content  </a> | <a href='mailto:"
+    + askerEmail +"?body="+bodyDecline+"&subject="+subjectDecline+"'>no</a> <br><br><br> <a href='mailto:" 
+    + introEmail +"?subject="+subjectPremmision+"&body='> Copy the next text and send intro request:</a><br><br>Hey " +introFirstName+", I would like to ask for your permission to introduce you to <a href='"+askerLinkedIn+"'>"+askerFirstName+ " " +askerLastName+"</a>. "+askerFirstName+" is the "+neaskerTitle+" @ "+neaskerOrg+". <br><br> I thought it could be worthwhile for both of you to connect. Please LMK if I can introduce?<br><br>Thanks,<br>"+connectorSignature+"<br><br>"+neaskerOrgDes; 
+    
