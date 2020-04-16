@@ -1,0 +1,10 @@
+function myFunction(e) {
+var r = e.source.getActiveRange();
+if(s.getName() == "App: Logins" && r.isBlank() == false) {
+  var body = "[Link to sprradsheet]"
+  MailApp.sendEmail({
+      to:"[test@test.com]",
+      subject:"New login in [Test]" ,
+      htmlBody: body});
+    }
+}
