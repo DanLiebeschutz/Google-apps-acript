@@ -1,0 +1,6 @@
+MailApp.sendEmail({
+      to:"test@test.com",
+      replyTo:replyMail, 
+      subject:subject,
+      htmlBody: msg2});
+    }
