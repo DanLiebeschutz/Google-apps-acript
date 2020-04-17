@@ -1,6 +1,8 @@
-var phoneNumber = sheet.getRange(row,10).getValue(); // Get phone number
-    var preFix = phoneNumber.subString(0,1); // Get prefix
+var phoneNumber = shee.getRange(row,10).getValue(); // Get phone number
+    Logger.log(phoneNumber); 
+    var preFix = phoneNumber.substring(0,1); // Get prefix
     if(preFix == 0){ //Check if without country code
-      var newPhoneNumber = '972'+ phoneNumber.subString(1,phoneNumber.length()); //Put country code and drop the '0' at the begining of the number
-      sheet.getRange(row,10).setValue(newPhoneNumber); //Set the new phone number in the right cell
+      var newPhoneNumber = '972'+ phoneNumber.substring(1,phoneNumber.length); //Put country code and drop the '0' at the begining of the number
+      Logger.log(newPhoneNumber);
+      shee.getRange(row,10).setValue(newPhoneNumber); //Set the new phone number in the right cell
     }
