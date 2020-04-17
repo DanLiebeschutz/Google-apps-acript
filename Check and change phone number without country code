@@ -1,0 +1,6 @@
+var phoneNumber = sheet.getRange(row,10).getValue(); // Get phone number
+    var preFix = phoneNumber.subString(0,1); // Get prefix
+    if(preFix == 0){ //Check if without country code
+      var newPhoneNumber = '972'+ phoneNumber.subString(1,phoneNumber.length()); //Put country code and drop the '0' at the begining of the number
+      sheet.getRange(row,10).setValue(newPhoneNumber); //Set the new phone number in the right cell
+    }
