@@ -1,4 +1,5 @@
 function myFunction(e) {
+var s = event.source.getActiveSheet();
 var r = e.source.getActiveRange();
 if(s.getName() == "App: Logins" && r.isBlank() == false) {
   var body = "[Link to sprradsheet]"
