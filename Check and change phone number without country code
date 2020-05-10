@@ -10,7 +10,7 @@ function changeInSpreadsheet(event) {
  var phoneNumber = s.getRange(row,10).getValue(); // Get phone number
  Logger.log('Original '+phoneNumber); 
  var preFix = phoneNumber.substring(0,1); // Get prefix
- Logger.log('preFix '+phoneNumber);  
+ Logger.log('preFix '+preFix);  
  if(preFix == 0 && phoneNumber!= ""){ //Check if without country code & phone number not empty
   var newPhoneNumber = '972'+ phoneNumber.substring(1,phoneNumber.length); //Put country code and drop the '0' at the begining of the number
   Logger.log('New '+newPhoneNumber);
