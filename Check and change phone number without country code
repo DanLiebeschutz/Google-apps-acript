@@ -1,8 +1,19 @@
-var phoneNumber = shee.getRange(row,10).getValue(); // Get phone number
-    Logger.log(phoneNumber); 
-    var preFix = phoneNumber.substring(0,1); // Get prefix
-    if(preFix == 0){ //Check if without country code
-      var newPhoneNumber = '972'+ phoneNumber.substring(1,phoneNumber.length); //Put country code and drop the '0' at the begining of the number
-      Logger.log(newPhoneNumber);
-      shee.getRange(row,10).setValue(newPhoneNumber); //Set the new phone number in the right cell
-    }
+//**on Change trigger function
+function changeInSpreadsheet(event) {
+ var s = event.source.getActiveSheet();
+ var r = event.source.getActiveRange();
+ var row = r.getRow();   
+ 
+ //** fix phone number to international
+ Logger.log('Stuff: fix phone number to international');
+ s.getRange(row,10).setNumberFormat("@STRING@"); //set phone format to string
+ var phoneNumber = s.getRange(row,10).getValue(); // Get phone number
+ Logger.log('Original '+phoneNumber); 
+ var preFix = phoneNumber.substring(0,1); // Get prefix
+ Logger.log('preFix '+phoneNumber);  
+ if(preFix == 0 && phoneNumber!= ""){ //Check if without country code & phone number not empty
+  var newPhoneNumber = '972'+ phoneNumber.substring(1,phoneNumber.length); //Put country code and drop the '0' at the begining of the number
+  Logger.log('New '+newPhoneNumber);
+  s.getRange(row,10).setValue(newPhoneNumber);} //Set the new phone number in the right cell
+  }
+ }
